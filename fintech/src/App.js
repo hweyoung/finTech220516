@@ -1,17 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-import Welcome from './components/Welcome'
-import StateAndEvent from './components/StateAndEvent';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Welcome from "./components/Welcome";
+import ArrayMap from "./components/ArrayMap";
+import AxiosTest from "./pages/AxiosTest";
 
 
 function App() {
   return (
-    <div className="APP">
-      <header className = "App-header">
-      <Welcome username="egoing" age = "29"></Welcome>
-      <StateAndEvent></StateAndEvent>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/a" element={<Welcome/>}></Route>
+        <Route path="/b" element={<ArrayMap/>}></Route>
+        <Route path="/axiosTest" element={<AxiosTest/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
